@@ -1,0 +1,52 @@
+CREATE TABLE `ocst` (
+  `acc` varchar(45) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `addressLine1` varchar(35) DEFAULT NULL,
+  `addressLine2` varchar(35) DEFAULT NULL,
+  `addressLine3` varchar(35) DEFAULT NULL,
+  `country` varchar(35) DEFAULT NULL,
+  `postcode` varchar(35) DEFAULT NULL,
+  `telephone` varchar(45) DEFAULT NULL,
+  `vatstatus` bit(1) DEFAULT NULL,
+  UNIQUE KEY `acc_UNIQUE` (`acc`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `oitm` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_code` varchar(45) DEFAULT NULL,
+  `item_desc` varchar(255) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL,
+  `cost_price` double DEFAULT NULL,
+  `sales_price` double DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UC_Item` (`item_code`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `ordr` (
+  `docnum` int(11) NOT NULL AUTO_INCREMENT,
+  `docdate` datetime DEFAULT NULL,
+  `custacc` varchar(45) DEFAULT NULL,
+  `doctitle` varchar(255) DEFAULT NULL,
+  `docstatus` bit(1) DEFAULT NULL,
+  `doctotal` double DEFAULT NULL,
+  `vattotal` double DEFAULT NULL,
+  PRIMARY KEY (`docnum`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `rdr1` (
+  `rowid` int(11) NOT NULL AUTO_INCREMENT,
+  `row_item_code` varchar(45) DEFAULT NULL,
+  `row_desc` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `delqty` int(11) DEFAULT NULL,
+  `unit_price` double DEFAULT NULL,
+  `row_total` double DEFAULT NULL,
+  `row_status` bit(1) DEFAULT NULL,
+  `so_docnum` int(11) DEFAULT NULL,
+  PRIMARY KEY (`rowid`),
+  KEY `FK_SORDER_idx` (`so_docnum`),
+  CONSTRAINT `FK_SORDER` FOREIGN KEY (`so_docnum`) REFERENCES `ordr` (`docnum`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
