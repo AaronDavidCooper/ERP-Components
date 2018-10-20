@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-Sep-2018, 12:34:49
+    Author     : AARON
+*/
+
+.bodybg{
+    -fx-background-image: url("/visual/bg.jpg");
+}
+
+.newwarning{
+    background-color: #3CBC8D;
+    color: white;
+}
+
+.sotablebg{
+    -fx-background-image: url("/visual/tablebgoriginal.png");
+}
