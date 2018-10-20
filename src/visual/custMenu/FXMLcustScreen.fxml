@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="bodybg" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="visual.custMenu.FXMLcustScreenController">
+   <children>
+      <HBox layoutX="15.0" layoutY="14.0" prefHeight="546.0" prefWidth="778.0">
+         <children>
+            <HBox prefHeight="566.0" prefWidth="346.0">
+               <children>
+                  <TableView fx:id="custView" prefHeight="546.0" prefWidth="351.0">
+                    <columns>
+                      <TableColumn fx:id="accCol" onEditStart="#updateFields" text="Acc Ref" />
+                      <TableColumn fx:id="nameCol" onEditStart="#updateFields" prefWidth="300.0" text="Customer Name" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox prefHeight="216.0" prefWidth="386.0">
+               <children>
+                  <VBox alignment="TOP_RIGHT" prefHeight="566.0" prefWidth="94.0" spacing="9.0">
+                     <children>
+                        <Label text="Acc Ref">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Name">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Telephone">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="VAT">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Address Line 1">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Address Line 2">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Address Line 3">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Country">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Post Code">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Sales Order" visible="false">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="129.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Sales Delivery" visible="false">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="Sales Invoice" visible="false">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="TOP_RIGHT" prefHeight="546.0" prefWidth="292.0">
+                     <children>
+                        <Label alignment="TOP_CENTER" prefHeight="38.0" prefWidth="281.0" text="Customer Manager">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="accField" alignment="TOP_LEFT" />
+                        <TextField fx:id="nameField" alignment="TOP_LEFT" />
+                        <TextField fx:id="telephoneField" alignment="TOP_LEFT" />
+                        <CheckBox fx:id="vatBox" mnemonicParsing="false">
+                           <VBox.margin>
+                              <Insets right="250.0" top="4.0" />
+                           </VBox.margin>
+                        </CheckBox>
+                        <TextField fx:id="addLine1Field" alignment="TOP_LEFT">
+                           <VBox.margin>
+                              <Insets top="6.0" />
+                           </VBox.margin></TextField>
+                        <TextField fx:id="addLine2Field" alignment="TOP_LEFT" />
+                        <TextField fx:id="addLine3Field" alignment="TOP_LEFT" />
+                        <TextField fx:id="countryField" alignment="TOP_LEFT" />
+                        <TextField fx:id="postcodeField" alignment="TOP_LEFT" />
+                        <Button fx:id="addupdateButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#submitCust" text="Add">
+                           <VBox.margin>
+                              <Insets top="3.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label text="Sales Information" visible="false">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets right="160.0" top="85.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField alignment="TOP_LEFT" editable="false" opacity="0.6" style="-fx-background-color: grey; -fx-border-color: black;" visible="false">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField alignment="TOP_LEFT" editable="false" opacity="0.6" style="-fx-background-color: grey; -fx-border-color: black;" visible="false" />
+                        <TextField alignment="TOP_LEFT" editable="false" opacity="0.6" style="-fx-background-color: grey; -fx-border-color: black;" visible="false" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Button layoutX="667.0" layoutY="561.0" mnemonicParsing="false" onAction="#returnToMain" text="Back to Main Menu" />
+      <Label fx:id="addwarningLabel" layoutX="444.0" layoutY="565.0" prefHeight="17.0" prefWidth="199.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
